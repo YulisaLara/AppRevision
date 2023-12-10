@@ -1,0 +1,32 @@
+/* Estilo CSS personalizado para el contenido */
+.content-card {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.confirmation-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#confirmButton {
+    flex: 1;
+    margin-right: 10px;
+}
+
+#cancelBtn {
+    flex: 1;
+}

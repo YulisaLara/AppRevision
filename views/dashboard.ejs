@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Matemágicos</title>
+    <!-- Agregar los enlaces a los archivos CSS y JavaScript de Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Agregar la biblioteca Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Estilo CSS personalizado -->
+    <link rel="stylesheet" href="../resources/css/dashboard.css">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/dashboard"><img src="../resources/img/logo.svg" alt="Logo"></a>
+        <!-- Resto del contenido de la barra de navegación -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="px-3 btn btn-danger" type="button" href="logout" id="logoutButton">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido principal (dashboard) -->
+    <h2 class="display-3 text-center font-weight-bold">Bienvenido/a <%= datosConcatenados.nombre %>
+    </h2>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-chart-bar"></i> Estadísticas</h5>
+                        <p class="card-text">Aquí puedes ver estadísticas relevantes.</p>
+                        <a href="#" class="btn btn-primary">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-book"></i> Cursos</h5>
+                        <p class="card-text">Explora y gestiona los cursos disponibles.</p>
+                        <a href="/courses" class="btn btn-primary">Ir a Cursos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-user-cog"></i> Administrar Cuenta</h5>
+                        <p class="card-text">Administra tu cuenta de usuario y ajustes.</p>
+                        <a href="/settings" class="btn btn-primary">Ir a Configuración</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            try {
+                // Limpiar sessionStorage al hacer clic en el botón de logout
+                sessionStorage.clear();
+            } catch (error) {
+                console.error('Error al limpiar sessionStorage:', error);
+            }
+        </script>
+
+        <!-- Pie de página -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2023 Matemágicos</p>
+            </div>
+        </footer>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración de Cuenta - Matemágicos</title>
+    <!-- Agregar los enlaces a los archivos CSS y JavaScript de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../resources/js/settings.js"></script>
+    <!-- Estilo CSS personalizado -->
+    <link rel="stylesheet" href="../resources/css/dashboard.css">
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .content-card {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            color: #333;
+            outline: none;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        #editarBtn {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/dashboard"><img src="../resources/img/logo.svg" alt="Logo"></a>
+        <!-- Resto del contenido de la barra de navegación -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="px-3 btn btn-danger" type="button" href="logout">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido principal (configuración de cuenta) -->
+    <div class="container mt-5">
+        <h2 class="text-center">Configuración de Cuenta</h2>
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">Datos de la Cuenta</h5>
+                <div class="content-card">
+                    <form method="POST" action="/update-account">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre"
+                                value="<%= datosConcatenados.nombre %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellidoPaterno">Apellido Paterno:</label>
+                            <input type="text" class="form-control" id="apellidoPaterno" name="apellidoPaterno"
+                                value="<%= datosConcatenados.apellidoPaterno %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="apellidoMaterno">Apellido Materno:</label>
+                            <input type="text" class="form-control" id="apellidoMaterno" name="apellidoMaterno"
+                                value="<%= datosConcatenados.apellidoMaterno %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="edad">Edad:</label>
+                            <input type="text" class="form-control" id="edad" name="edad"
+                                value="<%= datosConcatenados.edad %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo Electrónico:</label>
+                            <input type="email" class="form-control" id="correo" name="correo"
+                                value="<%= datosConcatenados.correo %>" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombreUsuario">Nombre de Usuario:</label>
+                            <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario"
+                                value="<%= datosConcatenados.nombreUsuario %>" readonly>
+                        </div>
+                    </form>
+                </div>
+
+                <a class="btn btn-primary" id="editarBtn">Editar</a>
+                <a class="btn btn-danger" id="eliminarBtn" href="/delete-account">Eliminar Cuenta</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if(alert) { %>
+        <script>
+            Swal.fire({
+                title: '<%= alertTitle %>',
+                text: '<%= alertMessage %>',
+                icon: '<%= alertIcon %>',
+                showConfirmButton: <%= showConfirmButton %>,
+                timer: <%= timer %>
+      }).then(() => {
+                    window.location = '/<%= ruta %>'
+                })
+        </script>
+
+        <% }%>
+
+            <!-- Pie de página -->
+            <footer class="footer">
+                <div class="container">
+                    <p>&copy; 2023 Matemágicos</p>
+                </div>
+            </footer>
+
+</body>
+
+</html>

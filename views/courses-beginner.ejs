@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Básico - Matemágicos</title>
+    <!-- Agregar los enlaces a los archivos CSS y JavaScript de Bootstrap -->
+    <script src="../resources/js/courses-b.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Agregar la biblioteca Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Estilo CSS personalizado -->
+    <link rel="stylesheet" href="../resources/css/courses.css">
+</head>
+
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/dashboard"><img src="../resources/img/logo.svg" alt="Logo"></a>
+        <!-- Resto del contenido de la barra de navegación -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="px-3 btn btn-danger" type="button" href="logout">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido principal del curso -->
+    <div class="container mt-5">
+        <h2>Curso Básico - Matemágicos</h2>
+        <div class="row">
+            <!-- Columna del video -->
+            <div class="col-lg-6">
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DP0EUIQOBx8" frameborder="0"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Columna del cuestionario -->
+            <div class="col-lg-6">
+                <div class="quiz-container">
+                    <h3>Cuestionario</h3>
+                    <form action="/submit-quiz" method="post">
+                        <!-- Pregunta 1 -->
+                        <div class="form-group" id="question1">
+                            <label for="q1">Pregunta 1: ¿Según el video visto cual es la suma correcta de unidades y
+                                decenas del siguiente número 10?</label>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q1_option1" name="q1" class="custom-control-input"
+                                    value="option1">
+                                <label class="custom-control-label" for="q1_option1">10 = 10 + 0</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q1_option2" name="q1" class="custom-control-input"
+                                    value="option2">
+                                <label class="custom-control-label" for="q1_option2">10 = 10 + 2</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q1_option3" name="q1" class="custom-control-input"
+                                    value="option3">
+                                <label class="custom-control-label" for="q1_option3">10 = 10 + 1</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q1_option4" name="q1" class="custom-control-input"
+                                    value="option4">
+                                <label class="custom-control-label" for="q1_option4">10 = 10 + 10</label>
+                            </div>
+                        </div>
+                        <!-- Pregunta 2 -->
+                        <div class="form-group" id="question2">
+                            <label for="q2">Pregunta 2: ¿Cuál es la suma correcta de unidades y decenas de este numero
+                                11?</label>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q2_option1" name="q2" class="custom-control-input"
+                                    value="option1">
+                                <label class="custom-control-label" for="q2_option1">11 = 10 + 10</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q2_option2" name="q2" class="custom-control-input"
+                                    value="option2">
+                                <label class="custom-control-label" for="q2_option2">11 = 10 + 11</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q2_option3" name="q2" class="custom-control-input"
+                                    value="option3">
+                                <label class="custom-control-label" for="q2_option3">11 = 11 + 10</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q2_option4" name="q2" class="custom-control-input"
+                                    value="option4">
+                                <label class="custom-control-label" for="q2_option4">11 = 10 + 1</label>
+                            </div>
+                        </div>
+                        <!-- Pregunta 3 -->
+                        <div class="form-group" id="question3">
+                            <label for="q3">Pregunta 3: ¿Cuál es la suma correcta de unidades y decenas de este numero
+                                22?</label>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q3_option1" name="q3" class="custom-control-input"
+                                    value="option1">
+                                <label class="custom-control-label" for="q3_option1">22 = 10 + 2 + 2</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q3_option2" name="q3" class="custom-control-input"
+                                    value="option2">
+                                <label class="custom-control-label" for="q3_option2">22 = 10 + 10 + 2</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q3_option3" name="q3" class="custom-control-input"
+                                    value="option3">
+                                <label class="custom-control-label" for="q3_option3">22 = 10 + 20 + 2</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q3_option4" name="q3" class="custom-control-input"
+                                    value="option4">
+                                <label class="custom-control-label" for="q3_option4">22 = 10 + 20 + 22</label>
+                            </div>
+                        </div>
+                        <!-- Pregunta 4 -->
+                        <div class="form-group" id="question4">
+                            <label for="q4">Pregunta 4: ¿Cuál es la suma correcta de unidades y decenas de este numero
+                                15?</label>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q4_option1" name="q4" class="custom-control-input"
+                                    value="option1">
+                                <label class="custom-control-label" for="q4_option1">15 = 10 + 50</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q4_option2" name="q4" class="custom-control-input"
+                                    value="option2">
+                                <label class="custom-control-label" for="q4_option2">15 = 10 + 10</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q4_option3" name="q4" class="custom-control-input"
+                                    value="option3">
+                                <label class="custom-control-label" for="q4_option3">15 = 10 + 5</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q4_option4" name="q4" class="custom-control-input"
+                                    value="option4">
+                                <label class="custom-control-label" for="q4_option4">15 = 10 + 55</label>
+                            </div>
+                        </div>
+                        <!-- Pregunta 5 -->
+                        <div class="form-group" id="question5">
+                            <label for="q5">Pregunta 5: ¿Cuál es la suma correcta de unidades y decenas de este numero
+                                13?</label>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q5_option1" name="q5" class="custom-control-input"
+                                    value="option1">
+                                <label class="custom-control-label" for="q5_option1">13 = 10 + 30</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q5_option2" name="q5" class="custom-control-input"
+                                    value="option2">
+                                <label class="custom-control-label" for="q5_option2">13 = 10 + 33</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q5_option3" name="q5" class="custom-control-input"
+                                    value="option3">
+                                <label class="custom-control-label" for="q5_option3">13 = 10 + 10</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="q5_option4" name="q5" class="custom-control-input"
+                                    value="option4">
+                                <label class="custom-control-label" for="q5_option4">13 = 10 + 3</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <!-- Botones de navegación -->
+                            <button type="button" id="btnPrevious" class="btn btn-primary"
+                                onclick="showQuestion('prev')">Anterior</button>
+                            <button type="button" id="btnNext" class="btn btn-primary"
+                                onclick="showQuestion('next')">Siguiente</button>
+                            <button type="button" id="btnSubmit" class="btn btn-primary" style="display: none;"
+                                onclick="submitForm()">Enviar Respuestas</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="center-button">
+        <a href="/courses" class="btn btn-primary">Volver a cursos</a>
+    </div>
+
+    <!-- Agrega esto al final del cuerpo de tu HTML -->
+    <div id="alert-container" class="fixed w-20 p-3 text-center"></div>
+
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="container2">
+            <p>&copy; 2023 Matemágicos - Contenido didáctico proveído por <a href="https://es.khanacademy.org/"
+                    target="_blank" rel="noopener noreferrer">Khan Academy</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
